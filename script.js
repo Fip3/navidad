@@ -18,9 +18,6 @@ function paraNavidad() {
     }
   }
   
-  var navidad = new Date(2017, 11, 25);
-  var ahora = Date.now();
-
   var diferencia = navidad - ahora;
 
   var d = diferencia /1000 /60 /60 /24;
