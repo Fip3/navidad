@@ -1,4 +1,23 @@
 function paraNavidad() {
+  
+  var ahora = new Date();
+
+  var anho = ahora.getFullYear();
+  var mes = ahora.getMonth();
+  var dia = ahora.getDate();
+
+  if (mes < 11) {
+    var navidad = new Date(anho, 11, 25);
+  } else if (mes > 11) {
+    var navidad = new Date(anho + 1, 11, 25);
+  } else {
+    if (dia < 25) {
+      var navidad = new Date(anho, 11, 25);
+    } else if (dia >= 25) {
+      var navidad = new Date(anho + 1, 11, 25);
+    }
+  }
+  
   var navidad = new Date(2017, 11, 25);
   var ahora = Date.now();
 
@@ -14,7 +33,7 @@ function paraNavidad() {
   var minutos = Math.floor(m);
 
   var s = (m - minutos) *60;
-  var segundos = Math.floor(s);
+  var segundos = parsefloat(s).toFloat(3);
 
   document.getElementById("dias").innerHTML = dias;
   document.getElementById("horas").innerHTML = horas;
@@ -23,5 +42,5 @@ function paraNavidad() {
 }
 
 function iniciar() {
-  setInterval(paraNavidad, 1000)
+  setInterval(paraNavidad, 1)
 }
