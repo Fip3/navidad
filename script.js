@@ -30,7 +30,7 @@ function paraNavidad() {
   var minutos = Math.floor(m);
 
   var s = (m - minutos) *60;
-  var segundos = parsefloat(s).toFixed(3);
+  var segundos = parseFloat(s).toFixed(3);
 
   document.getElementById("dias").innerHTML = dias;
   document.getElementById("horas").innerHTML = horas;
